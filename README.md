@@ -27,9 +27,11 @@ const svgParser = new SVGParser();
 svgParser.parseAndCache(svgData, index);
 
 // Retrieve SVG Parent attributes
-const parent = svgParser.getParent(index);
+// - This outputs the properties of the <svg> tag.
+const parent = svgParser.getParentAttribute(index);
 console.log('SVG Parent Attributes:', parent);
 
 // Retrieve SVG Children attributes
-const children = svgParser.getChildren(index);
+// - This will list the attributes for each <path> or child element within the SVG.
+const children = svgParser.getChildrenAttribute(index);
 console.log('SVG Children Attributes:', children);

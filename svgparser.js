@@ -54,7 +54,7 @@ class SVGParser {
    * @param {number} index - The index of the cached data.
    * @returns {Object|null} The parent (SVG) attributes or null if not found.
    */
-  getParent(index) {
+  getParentAttribute(index) {
     if (!this.parsedCache[index]) {
       // No data cached for this index
       return null;
@@ -67,7 +67,7 @@ class SVGParser {
    * @param {number} index - The index of the cached data.
    * @returns {Array|null} An array of children (Path) attributes or null if not found.
    */
-  getChildren(index) {
+  getChildrenAttribute(index) {
     if (!this.parsedCache[index]) {
       // No data cached for this index
       return null;
@@ -79,5 +79,5 @@ class SVGParser {
 // Usage:
 // const svgParser = new SVGParser();
 // svgParser.parseAndCache(yourSVGData, index); // Parses and caches the data
-// const parent = svgParser.getParent(index); // Retrieves SVG (parent) attributes
-// const children = svgParser.getChildren(index); // Retrieves Path (children) attributes
+// const parent = svgParser.getParentAttribute(index); // Retrieves SVG (parent) attributes
+// const children = svgParser.getChildrenAttribute(index); // Retrieves Path (children) attributes
